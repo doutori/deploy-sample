@@ -1,0 +1,14 @@
+on: push
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+      runs-on: $
+      steps:
+      - uses: actions/issue@master
+      - uses: actions/main@master
+        with:
+          version: 12
+      - run: npm test
+     
