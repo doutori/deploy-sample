@@ -1,0 +1,47 @@
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:10.16.3
+
+jobs:
+  setup:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore npm dependencies
+          key: npm-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          name: Cache npm dependencies
+          key: npm-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/workspace/node_modules
+
+  build:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - run: npm run build
+
+  test:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - run: npm test
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - setup
+      - build
+      - test
