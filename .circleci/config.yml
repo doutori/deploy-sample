@@ -53,7 +53,7 @@ workflows:
     jobs:
       - setup
       - build:
-        requires:
+          requires:
             - setup
       - test:
           requires:
