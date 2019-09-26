@@ -46,7 +46,7 @@ jobs:
     steps:
       - checkout
       - restore_npm
-      - run: npm test
+      - run: npm test --watch=false
 
 workflows:
   version: 2.1
@@ -54,4 +54,6 @@ workflows:
     jobs:
       - setup
       - build
-      - test
+      - test:
+        requires:
+          - build
