@@ -46,10 +46,9 @@ jobs:
     steps:
       - checkout
       - restore_npm
-      - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm test -- --no-watch --no-progress
 
 workflows:
-  version: 2.1
   build_and_test:
     jobs:
       - setup
