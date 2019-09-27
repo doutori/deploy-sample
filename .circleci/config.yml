@@ -59,8 +59,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
-      - run: ls -la
+          at: dist
       - restore_npm
       - run: npm run deploy:ghpages
 
