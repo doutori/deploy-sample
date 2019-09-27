@@ -57,9 +57,9 @@ jobs:
     executor:
       name: default
     steps:
-      - attach_workspace:
-          at: /dist/deploy-sample
       - run: ls -la
+      - attach_workspace:
+          at: .
       - restore_npm
       - run: npm run deploy:ghpages
 
