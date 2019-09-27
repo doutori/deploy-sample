@@ -60,8 +60,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - run: cd dist && ls -la -R
       - restore_npm
-      - run: npm run deploy:ghpages
+      - run: npm run deploy
 
 workflows:
   build_and_test:

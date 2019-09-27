@@ -125,7 +125,10 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "base-href": "/deploy-sample/",
+            "message": "[skip ci] deploy to GitHub Pages"
+          }
         }
       }
     }
