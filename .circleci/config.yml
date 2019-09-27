@@ -38,9 +38,8 @@ jobs:
     steps:
       - checkout
       - restore_npm
-      - run: npm run build -- --prod --base-href "/deploy-sample/"
+      - run: npm run build
       # Build 対象のディレクトリを後続のジョブで利用できるようにする
-      - run: ls -la
       - persist_to_workspace:
           root: .
           paths:
@@ -62,8 +61,7 @@ jobs:
       - attach_workspace:
           at: .
       - restore_npm
-      - run: pwd && cd dist
-      - run: ls -la
+      - run: cd dist && ls -la -R
       - run: npm run deploy:ghpages -- --dir="/dist/deploy-sample"
 
 workflows:

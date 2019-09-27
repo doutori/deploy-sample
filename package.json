@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:ghpages": "ngh"
+    "deploy:ghpages": "ngh --dir=dist/deploy-sample"
   },
   "private": true,
   "dependencies": {
