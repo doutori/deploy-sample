@@ -48,7 +48,7 @@ jobs:
       - restore_npm
       - add_ssh_keys:
           fingerprints:
-            - "34:24:20:da:0a:2d:a2:aa:7d:ce:fb:e8:2f:02:b1:8d"
+            - "32:fb:b2:48:9c:0a:77:3a:1e:d9:15:84:07:a7:25:2f"
       - run: npm run deploy
 
 workflows:
