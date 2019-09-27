@@ -57,9 +57,10 @@ jobs:
     executor:
       name: default
     steps:
-      - run: ls -la
+      - checkout
       - attach_workspace:
           at: .
+      - run: ls -la
       - restore_npm
       - run: npm run deploy:ghpages
 
