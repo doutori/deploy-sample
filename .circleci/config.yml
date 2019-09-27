@@ -46,6 +46,9 @@ jobs:
     steps:
       - checkout
       - restore_npm
+      - add_ssh_keys:
+          fingerprints:
+            - "34:24:20:da:0a:2d:a2:aa:7d:ce:fb:e8:2f:02:b1:8d"
       - run: npm run deploy
 
 workflows:
