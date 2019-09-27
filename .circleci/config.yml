@@ -59,7 +59,8 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: dist
+          at: .
+      - run: s -R | grep ":" | sed -e 's/://' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
       - restore_npm
       - run: npm run deploy:ghpages
 
