@@ -50,7 +50,7 @@ jobs:
           fingerprints:
             - "e1:52:0b:46:0b:75:ce:fc:35:17:5a:80:5a:82:1b:a4"
       - run: git config --global user.name "Circle CI"
-#      - run: git config --global user.email "<>"
+      - run: git config --global user.email "<>"
       - run: npm run deploy
 
 workflows:
