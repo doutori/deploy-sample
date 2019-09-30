@@ -59,7 +59,7 @@ workflows:
       - setup:
           filters:
             branches:
-              ignore: gh-pages
+              ignore: /gh-pages/
       - test:
           requires:
             - setup
