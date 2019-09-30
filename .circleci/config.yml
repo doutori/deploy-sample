@@ -57,9 +57,9 @@ workflows:
   build_and_test:
     jobs:
       - setup:
-        filters:
-          branches:
-            ignore: gh-pages
+          filters:
+            branches:
+              ignore: gh-pages
       - test:
           requires:
             - setup
